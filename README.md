@@ -75,4 +75,4 @@ python scripts/accept_inputs.py --root "D:\uterus_2.0\最终追踪特征输出" 
 
 ## 本地测试记录
 
-每次验收或训练后，在[`runs/`](runs/README.md)增加一份仅含汇总结果的Markdown记录，并提交到本地Git仓库。首份[输入验收记录](runs/2026-10-22_input_acceptance.md)已经保存。患者级验收表、逐例预测、模型权重及日志仍放在被Git忽略的`outputs/`等目录。`git commit`只更新本机的版本历史；本仓库目前没有远端，也无需上传云端即可持续记录测试。
+每次验收或训练后，在[`runs/`](runs/README.md)增加一份仅含汇总结果的Markdown记录。首份[输入验收记录](runs/2026-10-22_input_acceptance.md)已经保存。代码和不含患者身份的汇总记录同步到[公开GitHub仓库](https://github.com/wyxwyx357-del/rclk-deep-learning)；患者级验收表、逐例预测、模型权重及日志仍放在被Git忽略的`outputs/`等目录。

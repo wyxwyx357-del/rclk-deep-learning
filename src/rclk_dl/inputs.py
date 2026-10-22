@@ -96,6 +96,8 @@ def read_case(case_id, root, include_k=False):
     assert c.shape == (frames, positions) and l.shape == (frames, 2, positions - 1)
     with np.load(_one(core / '05_radial_tracking_corrected', '*_p3_image_boundary_evidence_v2.npz'), allow_pickle=False) as z:
         risk = z['p3_topology_risk_frame'].copy()
+    if risk.dtype.kind != 'b':
+        raise TypeError(f'p3_topology_risk_frame must be boolean, got {risk.dtype}')
     with np.load(_one(core / '07_artifact_qc', '*_artifact_qc_v2_1.npz'), allow_pickle=False) as z:
         assert np.array_equal(risk, z['p3_topology_risk'])
         assert np.array_equal(r, z['qc_radial_strain_rate_grade3_blank_s'], equal_nan=True)
