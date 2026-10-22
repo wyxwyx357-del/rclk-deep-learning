@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+.env
+paths.local.json
+
+# Patient data, videos, model artifacts, and experiment outputs stay outside Git.
+data/
+outputs/
+checkpoints/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.npz
+*.npy
+*.mp4
+*.avi
+*.dcm
+*.pt
+*.pth
+*.ckpt
+
