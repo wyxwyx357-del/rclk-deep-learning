@@ -94,7 +94,9 @@ def fit_frame_mlp(prepared, train_ids, eval_ids, seed, device, fixed_epochs=None
             if not bool(torch.isfinite(loss)):
                 raise ValueError('nonfinite frame MLP training loss')
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            gradient_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            if not bool(torch.isfinite(gradient_norm)):
+                raise ValueError('nonfinite frame MLP gradient')
             optimizer.step()
         if fixed_epochs is None:
             model.eval()
